@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrales Studio</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="home.html"><img class="logo" src="assets/LOGOTIPOS RGB_Sem fundo - Negativo (preto).png" alt=""></a>
+      <ul class="nav-links">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+        <li><a href="#agendar" class="btn-agendar">Agendar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="primeira_section scroll-reveal ">
+        <article>
+            <h1>ONDE O ESTILO ENCONTRA A PRECISÃO </h1>
+            <p>A arte do corte e da barba com toques contemporâneos</p>
+            <div>     
+                <a href="#agendar" class="btn-agendar">Agende seu horário</a>
+                <a href="#sevicos" class="btn-servicos">Ver serviços</a>
+            </div>
+        </article>
+        <img src="assets/Imagem_section1.png" alt="">
+
+    </section>
+    <section class="segunda_section scroll-reveal" id="servicos">
+      <h2>NOSSOS SERVIÇOS</h2>
+      <ul>
+        <li>Corte Clássico – R$ XX</li>
+        <li>Barba Tradicional – R$ XX</li>
+        <li>Corte + Barba – R$ XX</li>
+      </ul>
+    </section>
+
+    <section class="scroll-reveal">
+        <h2>NOSSO ESPAÇO</h2>
+        <div class="imagens">
+            <img src="assets/Imagem 3.png" alt="">
+            <img src="assets/Imagem 4.png" alt="">
+            <img src="assets/Imagem 3.png" alt="">
+        </div>
+    </section>
+
+    <section class="scroll-reveal" id="equipe">
+      <h2>EQUIPE</h2>
+      <p>Conheça nossos profissionais especializados em cuidados masculinos.</p>
+    </section>
+
+    <section class="terceira-section scroll-reveal" id="localizacao">
+      <h2>VENHA NOS VISITAR</h2>
+      <article>
+        <div>
+            <h3>CORRALES STUDIO</h3>
+            <p>Endereço: Rua Exemplo, 123, Bairro, Cidade - Estado</p>
+            <p>Telefone: (XX) XXXX-XXXX</p>
+            <p>Email:corrales.studio@corralesStudio.com.br
+        </div>
+        <iframe 
+            title="Corrales Studio Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.123456789!2d-43.123456!3d-22.987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x000000000000000%3A0x123456789abcdef!2sCorrales%20Studio!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"
+            class="mapa">
+        </iframe>
+      </article>
+
+      <h2>Agende seu horário</h2>
+      <h3>Horários marcados pelo site ganham 20% de desconto no primeiro corte</h3>
+      <form class="scroll-reveal" id="agendar" action="">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required>
+
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required>
+
+        <label for="servico">Serviço:</label>
+        <select id="servico" name="servico" required>
+          <option value="">Selecione um serviço</option>
+          <option value="corte">Corte Clássico</option>
+          <option value="barba">Barba Tradicional</option>
+          <option value="corte_barba">Corte + Barba</option>
+        </select>
+
+        <button type="submit" class="btn-agendar">Agendar</button>
+      </form>
+      
+    </section>
+  </main>
+
+  <footer style="text-align: center; padding: 20px; background-color: #f4f4f4;">
+    <p>&copy; 2025 Corrales Studio. Todos os direitos reservados.</p>
+  </footer>
+
+  
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const elementos = document.querySelectorAll(".scroll-reveal");
+
+    const observer = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("active");   // aparece
+        } else {
+          entrada.target.classList.remove("active"); // desaparece
+        }
+      });
+    }, { threshold: 0.3 }); // só ativa quando ~30% do elemento está visível
+
+    elementos.forEach((el) => observer.observe(el));
+  });
+</script>
+
+</body>
+</html>
