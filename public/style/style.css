@@ -1,21 +1,38 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+     overflow-x: hidden;
+    width: 100%;
     padding: 20px;
     font-family: "Montserrat", sans-serif;      
     background: #F2F2F2;
 }
 
-nav{  
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* NAVBAR DESKTOP */
+nav {  
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
+    position: relative;
 }
 
 .logo {
-      width: 200px;    
-      transition: transform 0.3s, filter 0.3s;
-    }
+    width: 200px;    
+    transition: transform 0.3s, filter 0.3s;
+}
 
+/* LINKS NAV NORMAL */
 .nav-links {
     list-style: none;   
     display: flex;
@@ -23,126 +40,151 @@ nav{
     gap: 20px;          
 }
 
-.nav-links a{
+.nav-links a {
     text-decoration: none;
     color: #000;         
 }
 
 .nav-links a::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #041C04;
-  transition: width 0.3s ease;
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #041C04;
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
+/* BOTÃO TOGGLE (OCULTO NO DESKTOP) */
+.toggle-menu {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #041C04;
+}
+
+
+/* BOTÕES */
 .btn-agendar {
-      background-color: #B4BEB6;   
-      color: #041C04;                 
-      padding: 12px 24px;         
-      border: none;                
-      border-radius: 4px;         
-      font-size: 16px;
-      font-weight: 600;                     
-      cursor: pointer;             
-      text-decoration: none;       
-      transition: all 0.3s ease;   
-      display: inline-block;
-    }
+    background-color: #B4BEB6;   
+    color: #041C04;                 
+    padding: 12px 24px;         
+    border: 1px solid black;                
+    border-radius: 4px;         
+    font-size: 16px;
+    font-weight: 600;                     
+    cursor: pointer;             
+    text-decoration: none;       
+    transition: all 0.3s ease;   
+    display: inline-block;
+}
 
-    .btn-agendar:hover {
-      background-color: #e73370;   
-      transform: scale(1.05);    
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
-    }
+.btn-agendar:hover {
+    background-color: #e73370;   
+    transform: scale(1.05);    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+}
 
-    .btn-agendar:active {
-      transform: scale(0.98);     
-    }
+.btn-agendar:active {
+    transform: scale(0.98);     
+}
 
-    .btn-servicos {
-      margin: 2px;
-      background-color: transparent;       
-      color: #041C04;                  
-      padding: 12px 24px;          
-      border: 1px solid #041C04;                 
-      border-radius: 4px;         
-      font-size: 16px;             
-      font-weight: bold;            
-      cursor: pointer;              
-      text-decoration: none;        
-      transition: all 0.3s ease;    
-      display: inline-block;
-    }
+.btn-servicos {
+    margin: 2px;
+    background-color: transparent;       
+    color: #041C04;                  
+    padding: 12px 24px;          
+    border: 1px solid #041C04;                 
+    border-radius: 4px;         
+    font-size: 16px;             
+    font-weight: bold;            
+    cursor: pointer;              
+    text-decoration: none;        
+    transition: all 0.3s ease;    
+    display: inline-block;
+}
 
-    .btn-servicos:hover {
-      background-color: #ebedeb; 
-      color: #041C04;          
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
-    }
+.btn-servicos:hover {
+    background-color: #ebedeb; 
+    color: #041C04;          
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+}
 
-    .btn-servicos:active {
-      transform: scale(0.98);       
-    }
+.btn-servicos:active {
+    transform: scale(0.98);       
+}
 
-
-.primeira_section{ 
+/* PRIMEIRA SECTION */
+.primeira_section { 
     background-color: #B4BEB6;
     display: flex;
-    text-align: center;
+    text-align: start;
     padding: 50px 20px;
+    margin-bottom: 20px;
 }
-.primeira_section h1{
-    text-align: left;
+
+.primeira_section article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 20px;
+}
+
+.primeira_section h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
 }
+
 .primeira_section p{
     font-size: 20px;
     margin-bottom: 30px;
 }
+
 .primeira_section img{
-    width: 400px;
+    width: 550px;
     height: auto;
 }
 
-.primeira_section article{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    flex: 1;
-    margin-right: 20px;
-   
-}
 
+/* SEGUNDA SECTION */
 .segunda_section{
     text-align: left;
+    margin-bottom: 20px;
 }
 
 .segunda_section h2{
     font-size: 2em;
     margin-bottom: 20px;
     border-bottom: 1px solid #cfcfcf;
-}  
+}
+
 .segunda_section ul{
-   display: flex;
-   flex-direction: column;
+    display: flex;
+    flex-direction: column;
     gap: 5px;
-    align-items: start;
     padding: 0;
     font-size: 18px;
     margin-bottom: 20px;
     border-bottom: 1px solid #cfcfcf;
-    
 }
+
 .segunda_section li{
     list-style: none;
     margin: 20px 0;
+}
+
+.section-imagem{
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #cfcfcf; ;
+}
+
+.section-imagem .imagens img{
+  height: 10%;
 }
 
 .imagens{
@@ -153,92 +195,331 @@ nav{
 
 .imagens img{
     width: 32%;
-    height: auto;
     border-radius: 8px;
 }
 
-.terceira-section{
-    text-align: left;
-}
 
-.terceira-section h2{
-    font-size: 2em;
+/* SECTION EQUIPE */
+
+.section-equipe{
     margin-bottom: 20px;
-
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cfcfcf; 
 }
+
+.section-equipe h2 {
+    text-align: start;
+    margin-bottom: 20px;
+}
+
+.section-equipe .imagens {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ====== TERCEIRA SECTION: layout em 2 colunas (formulário maior) ====== */
+.terceira-section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;                 /* espaçamento entre colunas */
+    padding: 40px 20px;
+    align-items: flex-start;
+}
+
 
 .terceira-section article{
+    flex: 0 0 50%;             
+    min-width: 260px;          
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    margin: 0;                 
     font-size: 18px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #cfcfcf;
 }
 
-.mapa{
-  margin : 20px;   
-  border-radius: 8px; 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);   
-  height: 350px;
+.mapa {
+    margin: 0;                
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    width: 75%;               
+    height: 450px;
 }
 
-/* Estilo do formulário */
+
+.formulario {
+    flex: 1 1 40%;             
+    min-width: 300px;
+    background-color: transparent; 
+    margin: 0;                
+    padding: 0;                
+    box-sizing: border-box;
+}
+
+
 #agendar {
-  background-color: #B4BEB6;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    width: 100%;
+    background-color: #B4BEB6;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0;
 }
+
 
 #agendar label {
-  font-weight: bold;
-  color: #333;
+    font-weight: bold;
+    color: #333;
 }
 
 #agendar input,
-#agendar select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+#agendar select,
+#agendar textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 0;                 
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
-#agendar input:focus,
-#agendar select:focus {
-  border-color: #ff4081;
-  box-shadow: 0 0 6px rgba(255,64,129,0.4);
-  outline: none;
+#agendar button.btn-agendar {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    align-self: stretch;
 }
 
-.btn-agendar:hover {
-  background-color: #ebedeb;
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+
+@media (max-width: 1200px) {
+  .primeira_section img {
+      width: 480px;
+  }
 }
 
-.btn-agendar:active {
-  transform: scale(0.98);
+@media (max-width: 992px) {
+  .primeira_section img {
+      width: 350px;
+  }
 }
+
+@media (max-width: 768px) {
+
+  /* === NAVBAR TOGGLE === */
+  .toggle-menu {
+      display: block;
+  }
+
+  .nav-links {
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background: #fff;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: none; 
+  }
+
+  .nav-links.active {
+      display: flex; 
+  }
+
+  .primeira_section {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .primeira_section article {
+      margin-right: 0;
+      text-align: center;
+      align-items: center;
+  }
+
+  .primeira_section img {
+      width: 100%;
+      margin-top: 20px;
+  }
+
+  .imagens {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .imagens img {
+      width: 100%;
+  }
+
+  .terceira-section article {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+
 
 
 .scroll-reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
 }
-
 
 .scroll-reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-#servicos, #equipe, #localizacao, #agendar {
-  scroll-margin-top: 100px
-} 
+
+@media (max-width: 600px) {
+
+  nav {
+      padding: 10px;
+  }
+
+  .logo {
+      width: 150px;
+  }
+
+  .primeira_section h1 {
+      font-size: 2em;
+  }
+
+  .primeira_section p {
+      font-size: 18px;
+  }
+
+  #agendar {
+      width: 90%;
+      padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .logo {
+      width: 130px;
+  }
+
+  .btn-agendar,
+  .btn-servicos {
+      padding: 10px 16px;
+      font-size: 14px;
+  }
+
+  .primeira_section h1 {
+      font-size: 1.8em;
+  }
+
+  .primeira_section p {
+      font-size: 16px;
+  }
+}
+
+.toggle-menu {
+    display: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #041C04;
+}
+
+/* Modo Mobile */
+@media (max-width: 768px) {
+
+    nav {
+        position: relative;
+    }
+
+    .toggle-menu {
+        display: block;
+        z-index: 900;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        width: 220px;
+        border-radius: 8px 0 0 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        display: none;
+        z-index: 800;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    
+    .primeira_section img {
+        display: none;
+    }
+
+    .primeira_section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .primeira_section article {
+        margin-right: 0;
+        align-items: center;
+    }
+
+    .botoes-section-um {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .imagens {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .imagens img {
+        width: 100%;
+    }
+
+    .terceira-section article {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mapa {
+        width: 100%;
+        height: 300px;
+    }
+        .terceira-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .terceira-section article,
+    .formulario {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+
+    .mapa {
+        height: 300px;
+    }
+
+  }

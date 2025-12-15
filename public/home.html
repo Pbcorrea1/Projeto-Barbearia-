@@ -14,7 +14,13 @@
 
   <header>
     <nav>
-      <a href="home.html"><img class="logo" src="assets/LOGOTIPOS RGB_Sem fundo - Negativo (preto).png" alt=""></a>
+      <a href="home.html">
+        <img class="logo" src="assets/LOGOTIPOS RGB_Sem fundo - Negativo (preto).png" alt="">
+      </a>
+
+      <!-- Botão Toggle (aparece no mobile) -->
+      <div class="toggle-menu">&#9776;</div>
+
       <ul class="nav-links">
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#equipe">Equipe</a></li>
@@ -27,15 +33,16 @@
   <main>
     <section class="primeira_section scroll-reveal ">
         <article>
-            <h1>ONDE O ESTILO ENCONTRA A PRECISÃO </h1>
-            <p>A arte do corte e da barba com toques contemporâneos</p>
-            <div>     
+            <div>
+              <h1>ONDE O ESTILO ENCONTRA A PRECISÃO </h1>
+              <p>A arte do corte e da barba com toques contemporâneos</p>
+            </div>
+            <div class="botoes-section-um">     
                 <a href="#agendar" class="btn-agendar">Agende seu horário</a>
                 <a href="#sevicos" class="btn-servicos">Ver serviços</a>
             </div>
         </article>
         <img src="assets/Imagem_section1.png" alt="">
-
     </section>
     <section class="segunda_section scroll-reveal" id="servicos">
       <h2>NOSSOS SERVIÇOS</h2>
@@ -46,23 +53,33 @@
       </ul>
     </section>
 
-    <section class="scroll-reveal">
+    <section class="scroll-reveal section-imagem">
         <h2>NOSSO ESPAÇO</h2>
-        <div class="imagens">
-            <img src="assets/Imagem 3.png" alt="">
-            <img src="assets/Imagem 4.png" alt="">
-            <img src="assets/Imagem 3.png" alt="">
+        <div class=" imagens">
+            <img src="assets/Imagem 4.jpg" alt="">
+            <img src="assets/Imagem 4.jpg" alt="">
+            <img src="assets/Imagem 4.jpg" alt="">
         </div>
     </section>
 
-    <section class="scroll-reveal" id="equipe">
+    <section class="scroll-reveal section-equipe" id="equipe">
       <h2>EQUIPE</h2>
-      <p>Conheça nossos profissionais especializados em cuidados masculinos.</p>
+      <article>
+        <h4>UNIDOS PELO TALENTO</h4>
+        <p>Cada membro da equipe traz sua própria experiência e criatividade, mas todos compartilham o mesmo compromisso: oferecer um atendimento personalizado, respeitando o estilo e a identidade de cada cliente.</p>
+        <h4>MISSÃO</h4>
+        <p>Mais do que cortes impecáveis, buscamos criar momentos de confiança e bem-estar. A barbearia é um espaço de encontro, conversa e descontração, onde cada cliente se sente parte da família.</p>
+      </article>
+      <div class="imagens">    
+        <img src="assets/equipe.jpg" alt="">
+        <img src="assets/equipe2.jpg" alt="">
+      </div>
     </section>
 
     <section class="terceira-section scroll-reveal" id="localizacao">
-      <h2>VENHA NOS VISITAR</h2>
+
       <article>
+        <h2>VENHA NOS VISITAR</h2>
         <div>
             <h3>CORRALES STUDIO</h3>
             <p>Endereço: Rua Exemplo, 123, Bairro, Cidade - Estado</p>
@@ -80,32 +97,38 @@
             class="mapa">
         </iframe>
       </article>
+      
+      
+      <div class="formulario">
 
-      <h2>Agende seu horário</h2>
-      <h3>Horários marcados pelo site ganham 20% de desconto no primeiro corte</h3>
-      <form class="scroll-reveal" id="agendar" action="">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+        <h2>Agende seu horário</h2>
+        <h3>Horários marcados pelo site ganham 20% de desconto no primeiro corte</h3>
+        <form class="scroll-reveal" id="agendar" action="">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required>
 
-        <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" required>
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" required>
 
-        <label for="data">Data:</label>
-        <input type="date" id="data" name="data" required>
+          <label for="data">Data:</label>
+          <input type="date" id="data" name="data" required>
 
-        <label for="hora">Hora:</label>
-        <input type="time" id="hora" name="hora" required>
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" name="hora" required>
 
-        <label for="servico">Serviço:</label>
-        <select id="servico" name="servico" required>
-          <option value="">Selecione um serviço</option>
-          <option value="corte">Corte Clássico</option>
-          <option value="barba">Barba Tradicional</option>
-          <option value="corte_barba">Corte + Barba</option>
-        </select>
+          <label for="servico">Serviço:</label>
+          <select id="servico" name="servico" required>
+            <option value="">Selecione um serviço</option>
+            <option value="corte">Corte Clássico</option>
+            <option value="barba">Barba Tradicional</option>
+            <option value="corte_barba">Corte + Barba</option>
+          </select>
 
-        <button type="submit" class="btn-agendar">Agendar</button>
-      </form>
+          <button type="submit" class="btn-agendar">Agendar</button>
+        </form>
+        
+
+      </div>
       
     </section>
   </main>
@@ -131,6 +154,10 @@
 
     elementos.forEach((el) => observer.observe(el));
   });
+  document.querySelector(".toggle-menu").onclick = function() {
+      document.querySelector(".nav-links").classList.toggle("active");
+  }
+
 </script>
 
 </body>
